@@ -24,7 +24,7 @@ public class Exception {
               System.out.println("Exceptin fixed");
               
       }
-    //   catch(ArithmeticException e2)
+    //   catch(ArithmeticException e2)     //if arthmetic exception was only there
     //   {
     //       System.out.println(e2);
     //       System.out.println("Execption fixed again");
