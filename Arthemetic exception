@@ -9,8 +9,9 @@ public class Exception {
         try {
             c = b / a;
         } 
-        catch (ArithmeticException e) {
-            System.out.println("Division by zero error: " + e);
+        catch (ArithmeticException e) 
+        {
+            System.out.println("Any message u want to print : " + e);
         }
 
         System.out.println(c);
