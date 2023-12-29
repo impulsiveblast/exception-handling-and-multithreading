@@ -1,0 +1,79 @@
+//multiple catch execution
+
+public class Exception {
+    public static void main(String[] args) {
+      
+      int i=8,j=2,k=0;
+      
+     try{
+          
+          k=i/j;    //reason for ArithmeticException
+          
+          int a[]=new int[4];
+          
+          for(int l=0;l<=4;l++)   //reason for ArrayIndexOutOfBoundsException due to acessing 5th element
+          {
+              a[l]=l;
+          }                            
+          
+      }
+      catch(ArrayIndexOutOfBoundsException e1)
+      {
+              System.out.println(e1);
+              
+              System.out.println("Exceptin fixed");
+              
+      }
+    //   catch(ArithmeticException e2)
+    //   {
+    //       System.out.println(e2);
+    //       System.out.println("Execption fixed again");
+          
+    //   }
+      
+      System.out.println(k);
+      
+      
+    }
+}
+
+//output: //multiple catch execution
+
+public class Exception {
+    public static void main(String[] args) {
+      
+      int i=8,j=2,k=0;
+      
+     try{
+          
+          k=i/j;    //reason for ArithmeticException
+          
+          int a[]=new int[4];
+          
+          for(int l=0;l<=4;l++)   //reason for ArrayIndexOutOfBoundsException due to acessing 5th element
+          {
+              a[l]=l;
+          }                            
+          
+      }
+      catch(ArrayIndexOutOfBoundsException e1)
+      {
+              System.out.println(e1);
+              
+              System.out.println("Exceptin fixed");
+              
+      }
+    //   catch(ArithmeticException e2)
+    //   {
+    //       System.out.println(e2);
+    //       System.out.println("Execption fixed again");
+          
+    //   }
+      
+      System.out.println(k);
+      
+      
+    }
+}
+//output: java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+//Exceptin fixed
