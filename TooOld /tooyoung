@@ -1,0 +1,61 @@
+//too old and too young
+//if > 45 too old and <20 too young
+import java.util.Scanner;
+
+class ToooldException extends Exception{
+    
+    public ToooldException(String msg)
+    {
+        super(msg);
+    }
+    
+}
+
+
+class TooyoungException extends Exception{
+    
+    public TooyoungException(String msg)
+    {
+        super(msg);
+    }
+    
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+    
+      Scanner sc=new Scanner(System.in);
+      
+      try{
+          
+          System.out.print("My age is: ");
+          
+          int age=sc.nextInt();
+          
+          if(age<20)
+          {
+            throw new TooyoungException("you are too young mf");    
+          }
+          else if(age>45)
+          {
+              throw new ToooldException("you are too old");
+          }
+          
+      }
+        catch(TooyoungException | ToooldException e)
+       {
+          System.out.println("exception details "+ e);
+       }
+       catch(Exception e)
+       {
+           
+       }
+       finally
+       {
+           sc.close();
+       }
+        
+	}
+}
