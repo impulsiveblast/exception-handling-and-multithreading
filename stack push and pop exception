@@ -1,0 +1,70 @@
+class PushException extends Exception {
+    
+    PushException(String msg) {
+        super(msg);
+    }
+}
+
+class PopException extends Exception {
+    
+    PopException(String msg) {
+        super(msg);
+    }
+}
+
+class CustomStack {
+   
+    int arrsize;
+    int top;
+    int[] array;
+   
+    public CustomStack(int size) {
+        this.arrsize = size;
+        this.top = -1;
+        this.array = new int[size];
+    }
+   
+    void push(int number) throws PushException {
+        if (top == arrsize - 1) {
+            throw new PushException("Stack overflow");
+        }
+        array[++top] = number;
+    }
+   
+    void pop() throws PopException {
+        if (top == -1) {
+            throw new PopException("Stack underflow");
+        }
+        top--;
+    }
+}
+
+class StackDetect {
+    
+    public static void main(String args[]) {
+        CustomStack c1 = new CustomStack(4);
+       
+        try {
+            c1.push(1);
+            c1.push(2);
+            c1.push(3);
+            c1.push(4);
+            c1.push(5);  // This will throw PushException
+        } 
+        catch (PushException e) {
+            System.out.println("PushException detected: " + e.getMessage());
+        }
+       
+        try {
+            c1.pop();
+            c1.pop();
+            c1.pop();
+            c1.pop();
+            c1.pop();  // This will throw PopException
+        } 
+        catch (PopException e)
+        {
+            System.out.println("PopException detected: " + e.getMessage());
+        }
+    }
+}
