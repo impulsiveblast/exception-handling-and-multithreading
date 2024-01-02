@@ -1,0 +1,26 @@
+//multithreading by extending the thread class
+class A extends Thread{
+    
+    public void run(){
+        
+        for(int i=0;i<5;i++)
+        {
+            System.out.println("gandu");  //class extending thread class contais the command of thread
+        }
+    }
+}
+
+class B{
+    
+    public static void main(String[] args)
+    {
+        A a1=new A();  //new object created
+        a1.start();  //start function is run
+        
+        for(int i=0;i<8;i++)
+        {
+            System.out.println("gandu college");
+        }
+    }
+    
+}
