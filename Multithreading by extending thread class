@@ -25,9 +25,22 @@ class B{
     public static void main(String[] args)
     {
         A a1=new A();  //new object created
-        a1.start();  //start function is run
+       A a2=new A();
+      A a3=new A();
         
-        for(int i=0;i<8;i++)
+        a1.start();  //start function is run
+        a2.start();
+       a3.start();
+try{
+
+     a1.join();  //will get exceuted first also ,shows exception so handled using try and catch
+     }
+catch(InterruptedException e)
+{
+ 
+}
+
+for(int i=0;i<8;i++)
         {
             System.out.println("gandu college");
         }
