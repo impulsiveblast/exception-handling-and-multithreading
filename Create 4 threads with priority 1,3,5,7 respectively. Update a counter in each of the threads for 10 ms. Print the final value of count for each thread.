@@ -47,7 +47,17 @@ class B{
          a3.start();
          a5.start();
          a7.start();
-         
+try{
+a1.join();
+a3.join();
+a5.join();
+a7.join();
+}
+catch(InterruptedException e)
+{
+  
+}
+
          System.out.println(a1.getName()+ "count value: "+ a1.getCounter());
          System.out.println(a3.getName()+ "count value: "+ a3.getCounter());
          System.out.println(a5.getName()+ "count value: "+ a5.getCounter());
