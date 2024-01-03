@@ -1,0 +1,28 @@
+class A extends Thread{
+    
+    public void run()
+    {
+        try{
+          System.out.println("t is running");
+        
+           Thread.sleep(1000);
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println("fixed");
+        }
+    }
+}
+
+class B{
+    
+    public static void main(String [] args){
+     A a1=new A();
+    a1.start();
+    
+    a1.interrupt();
+    
+        
+    }
+    
+}
