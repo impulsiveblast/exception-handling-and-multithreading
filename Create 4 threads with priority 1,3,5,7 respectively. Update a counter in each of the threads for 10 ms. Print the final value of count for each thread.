@@ -1,0 +1,59 @@
+class A extends Thread{
+    
+    private static int counter=0;  //0 for every start
+        
+        public void run(){
+            
+            try{
+               
+               for(int i=0;i<=10;i++)
+               {
+                 counter++;
+                
+                 Thread.sleep(10);
+               }
+                   
+            }
+            catch(InterruptedException e)
+            {
+                
+            }
+            
+        }
+        
+        
+        public int getCounter(){
+            return counter;
+        }
+        
+        
+}
+
+class B{
+          public static void main (String[] args) {
+             /* code */
+              A a1=new A();
+         A a3=new A();
+         A a5=new A();
+         A a7=new A();
+         
+         a1.setPriority(1);
+         a3.setPriority(3);
+         a5.setPriority(5);
+         a7.setPriority(7);
+         
+         
+         a1.start();
+         a3.start();
+         a5.start();
+         a7.start();
+         
+         System.out.println(a1.getName()+ "count value: "+ a1.getCounter());
+         System.out.println(a3.getName()+ "count value: "+ a3.getCounter());
+         System.out.println(a5.getName()+ "count value: "+ a5.getCounter());
+         System.out.println(a7.getName()+ "count value: "+ a7.getCounter());
+    
+             
+         }
+        
+}
