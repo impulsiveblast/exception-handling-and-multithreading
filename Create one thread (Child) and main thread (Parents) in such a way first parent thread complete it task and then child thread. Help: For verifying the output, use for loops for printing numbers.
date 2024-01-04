@@ -1,0 +1,66 @@
+// Create one thread (Child) and main thread (Parents) in such a way first parent thread complete
+// it task and then child thread. Help: For verifying the output, use for loops for printing numbers.
+
+class ChildThread extends Thread{
+    
+    public void run(){
+        
+        //parentchildparent...
+        try{
+         
+            for(int i=0;i<5;i++)
+          {
+            System.out.println(Thread.currentThread().getName()+" currently running");
+            
+            Thread.sleep(100);
+          }
+        
+            
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
+        
+    }
+}
+
+class ParentThread{
+    
+    public static void main(String[] args){
+        
+        ChildThread t1=new ChildThread();
+        
+        
+        try{
+         
+            for(int i=0;i<5;i++)
+           {
+            System.out.println(Thread.currentThread().getName()+" currently running: ");
+            
+            Thread.sleep(100);
+           }
+        
+            
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
+        
+        
+        // Thread.currentThread().join();
+         t1.start();
+        
+        try{
+          t1.join();    
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
+       
+        
+        
+    }
+}
